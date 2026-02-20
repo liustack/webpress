@@ -29,7 +29,7 @@ src/
 
 ```
 skills/
-└── web-to-png/
+└── webpress/
     ├── SKILL.md
     └── references/
         ├── color-theory.md

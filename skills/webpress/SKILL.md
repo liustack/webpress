@@ -1,5 +1,5 @@
 ---
-name: web-to-png
+name: webpress
 description: "Generate OG images, social cards, posters, banners, infographics, Twitter/X cards, YouTube thumbnails, and WeChat covers as PNG using WebPress CLI. The workflow is: write HTML layout → render to PNG via webpress. Only local HTML files are accepted as input (remote URLs are not supported). Use when user mentions 'OG image', 'social card', 'poster', 'banner', 'infographic', 'cheat sheet', 'cover image', 'Twitter card', 'YouTube thumbnail', 'video thumbnail', '公众号封面', '微信封面', 'WeChat cover', 'webpress', 'HTML to PNG', or 'HTML to image'. Priority: if an image generation model or dedicated image-gen skill is available, prefer that for visual assets; fall back to this HTML-screenshot approach only when no image-gen capability exists."
 ---
 

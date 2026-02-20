@@ -60,7 +60,7 @@ webpress -i stats.html -o infographic.png --preset infographic
 
 ## AI Agent Skill
 
-- [web-to-png/SKILL.md](skills/web-to-png/SKILL.md)
+- [webpress/SKILL.md](skills/webpress/SKILL.md)
 
 ## License
 
