@@ -1,0 +1,54 @@
+{
+  "name": "@liustack/webpress",
+  "version": "0.1.0",
+  "description": "CLI tool to render local HTML files into PNG images",
+  "type": "module",
+  "bin": {
+    "webpress": "./dist/main.js"
+  },
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm build",
+    "docs:list": "node scripts/docs-list.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "png",
+    "screenshot",
+    "og-image",
+    "social-card",
+    "banner",
+    "poster",
+    "infographic",
+    "html-to-image",
+    "web-to-png",
+    "cli",
+    "playwright"
+  ],
+  "author": "Leon Liu",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liustack/webpress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liustack/webpress/issues"
+  },
+  "homepage": "https://github.com/liustack/webpress#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "commander": "^13.1.0",
+    "playwright": "^1.58.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.7",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.1"
+  }
+}
