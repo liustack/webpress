@@ -1,6 +1,6 @@
 {
   "name": "@liustack/webpress",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "CLI tool to render local HTML files into PNG images",
   "type": "module",
   "bin": {
