@@ -37,14 +37,16 @@ webpress -i stats.html -o infographic.png --preset infographic
 
 ## Presets
 
-- `og` (1200x630)
-- `infographic` (1080x1350)
-- `poster` (1200x1500)
-- `banner` (1600x900)
-- `twitter` (1200x675)
-- `youtube` (1280x720)
-- `xiaohongshu` (1080x1440)
-- `wechat` (900x383)
+| Preset | Size | Example |
+|--------|------|---------|
+| `og` | 1200x630 | ![og](examples/shot-og.png) |
+| `twitter` | 1200x675 | ![twitter](examples/shot-twitter.png) |
+| `banner` | 1600x900 | ![banner](examples/shot-banner.png) |
+| `youtube` | 1280x720 | ![youtube](examples/shot-youtube.png) |
+| `wechat` | 900x383 | ![wechat](examples/shot-wechat.png) |
+| `infographic` | 1080x1350 | ![infographic](examples/shot-infographic.png) |
+| `poster` | 1200x1500 | ![poster](examples/shot-poster.png) |
+| `xiaohongshu` | 1080x1440 | ![xiaohongshu](examples/shot-xiaohongshu.png) |
 
 ## Options
 
