@@ -91,6 +91,8 @@ webpress -i input.html -o output.png --preset og
 
 > [!CAUTION]
 > **Every image generation task MUST follow these steps in order. Do NOT skip or reorder.**
+>
+> **Mandatory post-render QA**: After rendering, the agent MUST inspect the generated PNG for layout, visual quality, and semantic correctness (including misalignment/offset, overlap, clipping, overflow, inconsistent spacing, typo/copy mismatch, and icon-text semantic mismatch). If any issue exists, the agent MUST fix the HTML/CSS and re-render until the output passes QA.
 
 1. **Confirm output directory** — If `$ASSETS_DIR` is not set yet, **ask the user** where to store images. Do NOT create directories without asking.
 2. **Match preset** — Use the Scenario Routing Table above to select the correct `--preset` and note the **Spec ↓** column.
@@ -99,7 +101,9 @@ webpress -i input.html -o output.png --preset og
 5. **Write HTML** — Generate the HTML in `$ASSETS_DIR`, following the spec constraints (dimensions, safe area, typography, layout rules).
 6. **Self-verify** — Before rendering, check the HTML against the preset's constraint summary. Fix any violations.
 7. **Render** — Run `webpress` with the correct preset flag.
-8. **Clean up** — Delete the temporary HTML file (unless the user asked to keep it).
+8. **Post-render QA (mandatory)** — Inspect the PNG carefully for typography, layout alignment, visual hierarchy, semantic correctness, and any misalignment/overlap/clipping issues.
+9. **Fix and re-render if needed (mandatory)** — If any issue is found, revise the HTML/CSS and render again. Repeat QA until the result passes.
+10. **Clean up** — Delete the temporary HTML file (unless the user asked to keep it).
 
 ## Preset Specs and Design Guidelines
 

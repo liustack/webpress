@@ -39,3 +39,6 @@ test-output
 .issues/
 
 .claude/settings.local.json
+
+docs/marketing/
+docs/marketing2/
