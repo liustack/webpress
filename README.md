@@ -31,6 +31,12 @@ Or install as an **Agent Skill** — tell any AI coding tool that supports agent
 Install the skill from https://github.com/liustack/webpress
 ```
 
+Or use the `skills` CLI directly:
+
+```bash
+npx skills add https://github.com/liustack/webpress --skill webpress
+```
+
 ## Usage
 
 ```bash

@@ -29,6 +29,12 @@ npx @liustack/webpress [options]
 帮我安装这个 skill：https://github.com/liustack/webpress
 ```
 
+或使用 `skills` CLI 直接安装：
+
+```bash
+npx skills add https://github.com/liustack/webpress --skill webpress
+```
+
 ## 用法
 
 ```bash
