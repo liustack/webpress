@@ -25,6 +25,12 @@ Or run with `npx`:
 npx @liustack/webpress [options]
 ```
 
+Or install as an **Agent Skill** — tell any AI coding tool that supports agent skills (Claude Code, Codex, OpenCode, Cursor, Antigravity, etc.):
+
+```
+Install the skill from https://github.com/liustack/webpress
+```
+
 ## Usage
 
 ```bash
@@ -39,14 +45,37 @@ webpress -i stats.html -o infographic.png --preset infographic
 
 | Preset | Size | Example |
 |--------|------|---------|
-| `og` | 1200x630 | ![og](examples/shot-og.png) |
-| `twitter` | 1200x675 | ![twitter](examples/shot-twitter.png) |
-| `banner` | 1600x900 | ![banner](examples/shot-banner.png) |
-| `youtube` | 1280x720 | ![youtube](examples/shot-youtube.png) |
-| `wechat` | 900x383 | ![wechat](examples/shot-wechat.png) |
-| `infographic` | 1080x1350 | ![infographic](examples/shot-infographic.png) |
-| `poster` | 1200x1500 | ![poster](examples/shot-poster.png) |
-| `xiaohongshu` | 1080x1440 | ![xiaohongshu](examples/shot-xiaohongshu.png) |
+| `og` | 1200x630 | ![og](examples/og.png) |
+| `twitter` | 1200x675 | ![twitter](examples/cinema-twitter-presets.png) |
+| `banner` | 1600x900 | ![banner](examples/banner-vogue.png) |
+| `youtube` | 1280x720 | ![youtube](examples/youtube.png) |
+| `wechat` | 900x383 | ![wechat](examples/wechat.png) |
+| `infographic` | 1080x1350 | ![infographic](examples/infographic-skill.png) |
+| `poster` | 1200x1500 | ![poster](examples/poster.png) |
+| `xiaohongshu` | 1080x1440 | ![xiaohongshu](examples/xiaohongshu.png) |
+
+## More Examples
+
+**Cinema Theme**
+
+![cinema-twitter-pain](examples/cinema-twitter-pain.png)
+![cinema-infographic-presets](examples/cinema-infographic-presets.png)
+![cinema-infographic-skill](examples/cinema-infographic-skill.png)
+
+**Fashion Theme**
+
+![fashion-twitter-how](examples/fashion-twitter-how.png)
+![fashion-twitter-pain](examples/fashion-twitter-pain.png)
+![fashion-infographic-skill](examples/fashion-infographic-skill.png)
+![fashion-xhs-main](examples/fashion-xhs-main.png)
+![fashion-xhs-tutorial](examples/fashion-xhs-tutorial.png)
+
+**Other Styles**
+
+![banner](examples/banner.png)
+![twitter-pain](examples/twitter-pain.png)
+![xhs-cover-film](examples/xhs-cover-film.png)
+![xiaohongshu-cover](examples/xiaohongshu-cover.png)
 
 ## Options
 
