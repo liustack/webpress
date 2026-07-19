@@ -11,7 +11,7 @@ const presetNames = Object.keys(imagePresets).join(', ');
 const program = new Command();
 
 program
-    .name('coverpress')
+    .name('webpress')
     .description('Generate platform cover images from HTML presets')
     .version(__APP_VERSION__)
     .requiredOption('-i, --input <path>', 'Input HTML file path')

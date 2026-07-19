@@ -1,20 +1,20 @@
 ---
-name: coverpress
-description: "Generate platform cover images — OG cards, social cards, posters, banners, infographics, Twitter/X cards, YouTube thumbnails, WeChat covers, and Xiaohongshu covers — as PNG using CoverPress CLI. The workflow is: write HTML layout → render to PNG via coverpress. Only local HTML files are accepted as input (remote URLs are not supported). All images must use a built-in preset (no custom dimensions). Use when user mentions 'OG image', 'social card', 'poster', 'banner', 'infographic', 'cheat sheet', 'cover image', 'Twitter card', 'YouTube thumbnail', 'video thumbnail', '公众号封面', '微信封面', 'WeChat cover', 'coverpress', 'HTML to PNG', or 'HTML to image'. Priority: if an image generation model or dedicated image-gen skill is available, prefer that for visual assets; fall back to this HTML-preset approach only when no image-gen capability exists."
+name: webpress
+description: "Generate platform cover images — OG cards, social cards, posters, banners, infographics, Twitter/X cards, YouTube thumbnails, WeChat covers, and Xiaohongshu covers — as PNG using WebPress CLI. The workflow is: write HTML layout → render to PNG via webpress. Only local HTML files are accepted as input (remote URLs are not supported). All images must use a built-in preset (no custom dimensions). Use when user mentions 'OG image', 'social card', 'poster', 'banner', 'infographic', 'cheat sheet', 'cover image', 'Twitter card', 'YouTube thumbnail', 'video thumbnail', '公众号封面', '微信封面', 'WeChat cover', 'webpress', 'HTML to PNG', or 'HTML to image'. Priority: if an image generation model or dedicated image-gen skill is available, prefer that for visual assets; fall back to this HTML-preset approach only when no image-gen capability exists."
 ---
 
-# CoverPress — PNG
+# WebPress — PNG
 
 CLI tool to generate platform cover images from local HTML files using built-in presets.
 
 ## Installation
 
 ```bash
-npm install -g @liustack/coverpress@latest
+npm install -g @liustack/webpress@latest
 npx playwright install chromium
 ```
 
-> **Version check**: Before generating images, run `coverpress --version`. If the command is not found or the version is outdated, re-run the install command above to get the latest release.
+> **Version check**: Before generating images, run `webpress --version`. If the command is not found or the version is outdated, re-run the install command above to get the latest release.
 
 ## Design References & Visual Rules
 
@@ -43,7 +43,7 @@ npx playwright install chromium
 ## Usage
 
 ```bash
-coverpress -i input.html -o output.png --preset og
+webpress -i input.html -o output.png --preset og
 ```
 
 > PNG output requires a `#container` element. Rendering fails if it is missing.
@@ -70,7 +70,7 @@ coverpress -i input.html -o output.png --preset og
 > **NEVER scatter generated HTML files across the user's project.** All intermediate HTML must go into `$ASSETS_DIR` (the same directory where output images are stored).
 
 1. **Write temporary HTML to `$ASSETS_DIR`**: this avoids permission prompts and keeps intermediate files alongside their output.
-2. **Clean up after render**: delete the temporary HTML immediately after a successful `coverpress` run.
+2. **Clean up after render**: delete the temporary HTML immediately after a successful `webpress` run.
 3. **Keep only if asked**: if the user explicitly asks to keep the HTML source for debugging, leave it in `$ASSETS_DIR` and report its path.
 
 ## Scenario Routing Table (AI Agent Decision Guide)
@@ -99,7 +99,7 @@ coverpress -i input.html -o output.png --preset og
 4. **Read design references** — Review `references/color-theory.md` and `references/design-principles.md` (or use user-provided brand assets if available).
 5. **Write HTML** — Generate the HTML in `$ASSETS_DIR`, following the spec constraints (dimensions, safe area, typography, layout rules).
 6. **Self-verify** — Before rendering, check the HTML against the preset's constraint summary. Fix any violations.
-7. **Render** — Run `coverpress` with the correct preset flag.
+7. **Render** — Run `webpress` with the correct preset flag.
 8. **Post-render QA (mandatory)** — Inspect the PNG carefully for typography, layout alignment, visual hierarchy, semantic correctness, and any misalignment/overlap/clipping issues.
 9. **Fix and re-render if needed (mandatory)** — If any issue is found, revise the HTML/CSS and render again. Repeat QA until the result passes.
 10. **Clean up** — Delete the temporary HTML file (unless the user asked to keep it).
@@ -243,8 +243,8 @@ coverpress -i input.html -o output.png --preset og
 
 ```bash
 # Generate an OG image
-coverpress -i card.html -o og.png --preset og
+webpress -i card.html -o og.png --preset og
 
 # Generate a poster
-coverpress -i poster.html -o poster.png --preset poster
+webpress -i poster.html -o poster.png --preset poster
 ```

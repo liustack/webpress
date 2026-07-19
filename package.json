@@ -1,10 +1,10 @@
 {
-  "name": "@liustack/coverpress",
+  "name": "@liustack/webpress",
   "version": "0.2.0",
   "description": "CLI tool to generate platform cover images from HTML presets",
   "type": "module",
   "bin": {
-    "coverpress": "./dist/main.js"
+    "webpress": "./dist/main.js"
   },
   "scripts": {
     "dev": "vite build --watch",
@@ -24,7 +24,7 @@
     "banner",
     "poster",
     "infographic",
-    "coverpress",
+    "webpress",
     "cli",
     "playwright"
   ],
@@ -32,12 +32,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liustack/coverpress.git"
+    "url": "git+https://github.com/liustack/webpress.git"
   },
   "bugs": {
-    "url": "https://github.com/liustack/coverpress/issues"
+    "url": "https://github.com/liustack/webpress/issues"
   },
-  "homepage": "https://github.com/liustack/coverpress#readme",
+  "homepage": "https://github.com/liustack/webpress#readme",
   "engines": {
     "node": ">=18"
   },

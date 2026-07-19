@@ -1,4 +1,4 @@
-# CoverPress
+# WebPress
 
 A CLI toolkit for AI agents to generate platform cover images from local HTML presets.
 
@@ -15,36 +15,36 @@ A CLI toolkit for AI agents to generate platform cover images from local HTML pr
 ## Installation
 
 ```bash
-npm install -g @liustack/coverpress
+npm install -g @liustack/webpress
 npx playwright install chromium
 ```
 
 Or run with `npx`:
 
 ```bash
-npx @liustack/coverpress [options]
+npx @liustack/webpress [options]
 ```
 
 Or install as an **Agent Skill** — tell any AI coding tool that supports agent skills (Claude Code, Codex, OpenCode, Cursor, Antigravity, etc.):
 
 ```
-Install the skill from https://github.com/liustack/coverpress
+Install the skill from https://github.com/liustack/webpress
 ```
 
 Or use the `skills` CLI directly:
 
 ```bash
-npx skills add https://github.com/liustack/coverpress --skill coverpress
+npx skills add https://github.com/liustack/webpress --skill webpress
 ```
 
 ## Usage
 
 ```bash
 # OG card
-coverpress -i card.html -o og.png --preset og
+webpress -i card.html -o og.png --preset og
 
 # Infographic
-coverpress -i stats.html -o infographic.png --preset infographic
+webpress -i stats.html -o infographic.png --preset infographic
 ```
 
 ## Presets
@@ -97,7 +97,7 @@ coverpress -i stats.html -o infographic.png --preset infographic
 
 ## AI Agent Skill
 
-- [coverpress/SKILL.md](skills/coverpress/SKILL.md)
+- [webpress/SKILL.md](skills/webpress/SKILL.md)
 
 ## License
 

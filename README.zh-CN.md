@@ -1,4 +1,4 @@
-# CoverPress
+# WebPress
 
 面向 AI Agent 的封面图生成 CLI，可将本地 HTML 按预设尺寸输出为高质量 PNG 图片。
 
@@ -13,36 +13,36 @@
 ## 安装
 
 ```bash
-npm install -g @liustack/coverpress
+npm install -g @liustack/webpress
 npx playwright install chromium
 ```
 
 或使用 `npx`：
 
 ```bash
-npx @liustack/coverpress [options]
+npx @liustack/webpress [options]
 ```
 
 也可以作为 **Agent Skill** 安装 — 在任何支持 Agent Skill 的 AI 编程工具（Claude Code、Codex、OpenCode、Cursor、Antigravity 等）中输入：
 
 ```
-帮我安装这个 skill：https://github.com/liustack/coverpress
+帮我安装这个 skill：https://github.com/liustack/webpress
 ```
 
 或使用 `skills` CLI 直接安装：
 
 ```bash
-npx skills add https://github.com/liustack/coverpress --skill coverpress
+npx skills add https://github.com/liustack/webpress --skill webpress
 ```
 
 ## 用法
 
 ```bash
 # 生成 OG 卡片
-coverpress -i card.html -o og.png --preset og
+webpress -i card.html -o og.png --preset og
 
 # 生成信息图
-coverpress -i stats.html -o infographic.png --preset infographic
+webpress -i stats.html -o infographic.png --preset infographic
 ```
 
 ## 预设尺寸
@@ -95,7 +95,7 @@ coverpress -i stats.html -o infographic.png --preset infographic
 
 ## AI Agent Skill
 
-- [coverpress/SKILL.md](skills/coverpress/SKILL.md)
+- [webpress/SKILL.md](skills/webpress/SKILL.md)
 
 ## License
 
