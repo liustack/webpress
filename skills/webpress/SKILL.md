@@ -50,12 +50,11 @@ webpress -i input.html -o output.png --preset og
 
 ## Assets Directory
 
-> [!CAUTION]
-> **ASK FIRST — do NOT assume a directory.** You MUST ask the user where to store generated images BEFORE writing any file. Do NOT silently create directories.
+Default output directory: `${workspaceRoot}/.issues/assets/` — the workspace draft area. Generated images are working artifacts, not repository assets, so they live in the ignored draft layer by default.
 
-1. **Ask the user**: "Where should I store the generated images?" — wait for a response.
-2. **Remember the answer** as `$ASSETS_DIR` for the rest of the session.
-3. **Fallback**: Only if the user explicitly says "use default" or "whatever" or does not answer after being asked, use `${workspaceRoot}/assets`.
+1. **Ensure the draft directory is ignored before the first write**: if `git check-ignore .issues` fails, append `.issues/` to `.git/info/exclude` (a local ignore — leave the shared `.gitignore` alone) and give the user a one-line heads-up. In a non-git workspace there is no commit risk; write directly.
+2. **User override**: when the user names a different directory, use it and remember it as `$ASSETS_DIR` for the rest of the session.
+3. **Promotion is explicit**: an image only leaves the draft area when the user wants it in the repository (a README image, a committed asset). Copy it to the destination explicitly and say so — never generate straight into tracked paths on your own.
 
 ## Workspace Visual & Brand Resources (AI Agent Guidance)
 
@@ -64,14 +63,14 @@ webpress -i input.html -o output.png --preset og
 - Also inspect project stylesheets and font usage (e.g., `*.css`, `*.scss`, `*.tailwind.css`) to infer the color palette and visual style when explicit brand assets are incomplete.
 - If no brand resources are available, ask the user to provide them (logo, font preference) before generating visuals.
 
-## Temporary HTML — Write to Assets Directory
+## HTML Sources — Keep Them Next to the Output
 
 > [!CAUTION]
-> **NEVER scatter generated HTML files across the user's project.** All intermediate HTML must go into `$ASSETS_DIR` (the same directory where output images are stored).
+> **NEVER scatter generated HTML files across the user's project.** All source HTML goes into the assets directory (the same directory where output images are stored).
 
-1. **Write temporary HTML to `$ASSETS_DIR`**: this avoids permission prompts and keeps intermediate files alongside their output.
-2. **Clean up after render**: delete the temporary HTML immediately after a successful `webpress` run.
-3. **Keep only if asked**: if the user explicitly asks to keep the HTML source for debugging, leave it in `$ASSETS_DIR` and report its path.
+1. **Write HTML sources to the assets directory**: this avoids permission prompts and keeps sources alongside their output.
+2. **Keep the source by default**: the draft area is git-ignored, so sources cost nothing and make later edits a re-render instead of a rebuild. Report the source path together with the image path.
+3. **Delete only if asked**: remove HTML sources only when the user explicitly wants them gone.
 
 ## Scenario Routing Table (AI Agent Decision Guide)
 
@@ -93,7 +92,7 @@ webpress -i input.html -o output.png --preset og
 >
 > **Mandatory post-render QA**: After rendering, the agent MUST inspect the generated PNG for layout, visual quality, and semantic correctness (including misalignment/offset, overlap, clipping, overflow, inconsistent spacing, typo/copy mismatch, and icon-text semantic mismatch). If any issue exists, the agent MUST fix the HTML/CSS and re-render until the output passes QA.
 
-1. **Confirm output directory** — If `$ASSETS_DIR` is not set yet, **ask the user** where to store images. Do NOT create directories without asking.
+1. **Confirm output directory** — Default to `${workspaceRoot}/.issues/assets/` (see "Assets Directory": ensure `.issues/` is git-ignored first). Use `$ASSETS_DIR` instead when the user has named one.
 2. **Match preset** — Use the Scenario Routing Table above to select the correct `--preset`.
 3. **Read the preset spec** — Scroll to the referenced spec in "Preset Specs and Design Guidelines" below. Read the **`CONSTRAINTS`** line and full spec for that preset.
 4. **Read design references** — Review `references/color-theory.md` and `references/design-principles.md` (or use user-provided brand assets if available).
@@ -102,7 +101,7 @@ webpress -i input.html -o output.png --preset og
 7. **Render** — Run `webpress` with the correct preset flag.
 8. **Post-render QA (mandatory)** — Inspect the PNG carefully for typography, layout alignment, visual hierarchy, semantic correctness, and any misalignment/overlap/clipping issues.
 9. **Fix and re-render if needed (mandatory)** — If any issue is found, revise the HTML/CSS and render again. Repeat QA until the result passes.
-10. **Clean up** — Delete the temporary HTML file (unless the user asked to keep it).
+10. **Report both paths** — Hand back the image path and its HTML source path. Keep the source (the draft area is ignored); delete it only if the user asks.
 
 ## Preset Specs and Design Guidelines
 
